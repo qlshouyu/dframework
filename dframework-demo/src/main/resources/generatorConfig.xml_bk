@@ -1,0 +1,19 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="dsql" targetRuntime="MyBatis3DynamicSql">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8" />
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/ucenter"
+                userId="root"
+                password="123456"></jdbcConnection>
+        <javaModelGenerator targetPackage="com.shouyu.dframework.dframework.demo.domain" targetProject="src/main/java"/>
+
+        <javaClientGenerator targetPackage="com.shouyu.dframework.dframework.demo.infrastructure.mapper" targetProject="src/main/java"/>
+
+        <table tableName="uc_account" />
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,4 @@
+module java.shouyu.dframework.domain {
+    exports com.shouyu.dframework.entity;
+    exports com.shouyu.dframework.respository;
+}
