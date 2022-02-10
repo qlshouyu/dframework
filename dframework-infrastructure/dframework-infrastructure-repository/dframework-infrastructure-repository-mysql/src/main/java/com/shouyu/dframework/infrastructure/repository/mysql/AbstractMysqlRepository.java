@@ -69,5 +69,10 @@ public abstract class AbstractMysqlRepository<T extends Entity, M extends Mybati
         return new MySqlPage(new PageInfo<>(list));
     }
 
+    @Override
+    public long countByExample(Example example) {
+        return this.mapper.countByExample(example);
+    }
+
 
 }

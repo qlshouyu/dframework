@@ -55,4 +55,14 @@ public interface Repository<ID, T extends Entity> {
     List<T> selectByExample(Example example);
 
     Page<T> pageByExample(PageExample example);
+
+    /**
+     * 满足 example的数据数量
+     * @param example
+     * @return
+     */
+    long countByExample(Example example);
+
+
+
 }
