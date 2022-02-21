@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * mysql版本账户仓库
  */
 @Component
-public class MysqlAccountRepository extends AbstractMysqlRepository<UcAccount, AccountMapper> implements AccountRepository {
+public class MysqlAccountRepository extends AbstractMysqlRepository<String,UcAccount, AccountMapper> implements AccountRepository {
 
     public MysqlAccountRepository(AccountMapper mapper) {
         super(mapper);

@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-public abstract class AbstractMysqlRepository<T extends Entity, M extends MybatisMapper<String, T>> implements Repository<String, T> {
+public abstract class AbstractMysqlRepository<ID,T extends Entity, M extends MybatisMapper<ID, T>> implements Repository<ID, T> {
     private final static Logger LOGGER = LoggerFactory.getLogger(AbstractMysqlRepository.class);
     private M mapper;
 
@@ -22,7 +22,7 @@ public abstract class AbstractMysqlRepository<T extends Entity, M extends Mybati
 
 
     @Override
-    public T selectById(String s) {
+    public T selectById(ID s) {
         T entity = this.mapper.selectByPrimaryKey(s);
         return entity;
     }
@@ -51,7 +51,7 @@ public abstract class AbstractMysqlRepository<T extends Entity, M extends Mybati
     }
 
     @Override
-    public boolean deleteById(String s) {
+    public boolean deleteById(ID s) {
         int count = this.mapper.deleteByPrimaryKey(s);
         LOGGER.info("delete by id :{}  count:{}", s, count);
         return count > 0 ? true : false;
@@ -73,6 +73,4 @@ public abstract class AbstractMysqlRepository<T extends Entity, M extends Mybati
     public long countByExample(Example example) {
         return this.mapper.countByExample(example);
     }
-
-
 }
