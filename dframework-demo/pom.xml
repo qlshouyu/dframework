@@ -16,7 +16,7 @@
     <properties>
         <java.version>1.8</java.version>
         <mysql-connector.version>8.0.26</mysql-connector.version>
-        <dframework.version>1.0.0-SNAPSHOT</dframework.version>
+        <dframework.version>1.0.1-SNAPSHOT</dframework.version>
     </properties>
     <dependencies>
         <dependency>
